@@ -1,0 +1,17 @@
+.container2 {
+    margin-left: 300px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.profit {
+    font-size: 16px;
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+}

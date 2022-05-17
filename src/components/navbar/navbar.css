@@ -1,0 +1,11 @@
+.navstyle {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    border-radius: 10px;
+    color: white;
+    background-color: #1d3eaa;
+    padding: 0px;
+}

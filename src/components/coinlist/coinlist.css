@@ -1,0 +1,24 @@
+.container1 {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: -200px;
+    padding-left: 250px;
+    padding-right: 250px;
+    width: 80%;
+    transition: 0.5s;
+}
+
+.row_background:hover {
+    background-color: beige;
+    cursor: pointer;
+}
+
+.pagination {
+    color: #1d3eaa;
+    font-size: 14px;
+    /* background-color: #1d3eaa; */
+}
