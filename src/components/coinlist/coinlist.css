@@ -22,3 +22,16 @@
     font-size: 14px;
     /* background-color: #1d3eaa; */
 }
+
+@media only screen and (max-width: 600px) {
+    .container1 {
+        display: flex;
+        width: fit-content;
+        padding-left: 0px;
+        padding-right: 250px;
+        font-size: 25px;
+    }
+    .marketcap {
+        display: none;
+    }
+}

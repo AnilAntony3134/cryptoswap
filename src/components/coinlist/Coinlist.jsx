@@ -101,6 +101,7 @@ const Coinlist = () => {
 
                         </TableCell>
                         <TableCell
+                            className='currentprice'
                             align='right'
                             style={{color: "black",
                             fontWeight: 500,
@@ -110,6 +111,7 @@ const Coinlist = () => {
                             ₹{numberWithCommas(row.current_price.toFixed(2))}
                         </TableCell>
                         <TableCell
+                            className='profit'
                             align='right'
                             style={{color: profit > 0 ? "rgb(14,203,123":"red",
                             fontWeight: 500,
@@ -120,6 +122,7 @@ const Coinlist = () => {
                             {row.price_change_percentage_24h.toFixed(2)}%
                         </TableCell>
                         <TableCell
+                            className='marketcap'
                             align='right'
                             style={{color: "black",
                             fontWeight: 500,

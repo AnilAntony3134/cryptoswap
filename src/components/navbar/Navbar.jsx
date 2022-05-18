@@ -3,15 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styledComponents from "styled-components";
 import "./navbar.css";
+import { mobile } from "../../responsive";
 
 const Container = styledComponents.div`
     background-color: #f4f8f8;
     width: 220px;
     height: 100vh;
-    display: none;
+    display: flex;
     align-items: center;
     position: fixed;
     z-index: 10;
+    ${mobile({width:"60px"})}
 `
 const Wrapper = styledComponents.div`
     display: flex;
@@ -19,12 +21,14 @@ const Wrapper = styledComponents.div`
     flex-direction: column;
     justify-content: space-between;
     height: 95%;
+    ${mobile({marginLeft:"10px"})}
 `
 const Top = styledComponents.div`
 
 `
 const Title = styledComponents.div`
     font-size: 24px;
+    ${mobile({display:"flex",flexDirection:"column",fontSize:"16px"})}
     
 `
 const H1 = styledComponents.span`
@@ -50,6 +54,7 @@ const Item = styledComponents.div`
     cursor: pointer;
     border-radius: 10px;
     transition: 0.5s ease;
+    ${mobile({padding:"15px",flexDirection:"column"})}
     &:hover{
         background-color: #1d3eaa;
         color: white;
@@ -57,7 +62,11 @@ const Item = styledComponents.div`
 `
 const Icons = styledComponents.div`
     margin-right: 10px;
+    ${mobile({marginRight:"0px",})}
     
+`
+const Font = styledComponents.span`
+    ${mobile({display:"none"})}
 `
 const Bottom = styledComponents.div`
     
@@ -77,35 +86,36 @@ const Navbar = () => {
             <Item>
               <Icons>
                   <FontAwesomeIcon icon={faUser}/>
-              </Icons>Home
+              </Icons>
+              <Font>Home</Font>
             </Item>
             </NavLink>
             <NavLink to='/dashboard' className="navstyle">
             <Item>
               <Icons>
               <FontAwesomeIcon icon={faDashboard}/>
-              </Icons>Dashboard
+              </Icons><Font>Dashboard</Font>
             </Item>
             </NavLink>
             <NavLink to='/wallet' className="navstyle">
             <Item>
               <Icons>
               <FontAwesomeIcon icon={faWallet}/>
-              </Icons>Wallet
+              </Icons><Font>Wallet</Font>
             </Item>
             </NavLink>
             <NavLink to='/trade' className="navstyle">
             <Item>
               <Icons>
               <FontAwesomeIcon icon={faExchange}/>
-              </Icons>Trade
+              </Icons><Font>Trade</Font>
             </Item>
             </NavLink>
             <NavLink to='/exchange' className="navstyle">
             <Item>
               <Icons>
               <FontAwesomeIcon icon={faMoneyBillTransfer} />
-              </Icons>Exchange
+              </Icons><Font>Exchange</Font>
             </Item>
             </NavLink>
           </Items>
@@ -113,13 +123,13 @@ const Navbar = () => {
         <Bottom>
           <Items>
             <Item>
-              <Icons><FontAwesomeIcon icon={faInfoCircle}/></Icons>Information
+              <Icons><FontAwesomeIcon icon={faInfoCircle}/></Icons><Font>Information</Font>
             </Item>
             <Item>
-              <Icons><FontAwesomeIcon icon={faSliders}/></Icons>Account Settings
+              <Icons><FontAwesomeIcon icon={faSliders}/></Icons><Font>Account Settings</Font>
             </Item>
             <Item>
-              <Icons><FontAwesomeIcon icon={faRightFromBracket}/></Icons>Log Out
+              <Icons><FontAwesomeIcon icon={faRightFromBracket}/></Icons><Font>Log Out</Font>
             </Item>
           </Items>
         </Bottom>

@@ -1,10 +1,12 @@
 import { CircularProgress, LinearProgress } from "@mui/material";
 import axios from "axios";
+import { LineElement } from "chart.js";
 import React, { useEffect, useState } from "react";
-import {
-  Line,
-} from "react-chartjs-2";
+// import { Line } from "react-chartjs-2";
+// import { Doughnut, Bar, Line, Pie } from 'react-chartjs-2';
 import { HistoricalChart } from "../../config/api";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+
 
 const currency = "INR";
 const Chart = ({ coin }) => {
@@ -15,7 +17,6 @@ const Chart = ({ coin }) => {
     const { data } = await axios.get(HistoricalChart(coin.id, days, currency));
     sethistoricaldata(data.prices);
   };
-  console.log(historicaldata);
 
   useEffect(() => {
     fetchcharts()
@@ -26,7 +27,7 @@ const Chart = ({ coin }) => {
       <CircularProgress style={{ backgroundColor: "gold" }} />
     ) : (
       <>
-        <Line
+        {/* <Line
           data={{
             labels: historicaldata.map((coin) => {
               let date = new Date(coin[0]);
@@ -45,7 +46,16 @@ const Chart = ({ coin }) => {
               },
             ],
           }}
-        />
+        /> */}
+
+{/* <LineChart width={600} height={300} data={data}>
+    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+    <CartesianGrid stroke="#ccc" />
+    <XAxis dataKey="name" />
+    <YAxis />
+  </LineChart> */}
+
+
       </>
     );
   }

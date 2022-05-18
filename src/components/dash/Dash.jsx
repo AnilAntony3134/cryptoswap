@@ -71,7 +71,7 @@ if (!currentcoin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
                 
             </Typography>
         </div>
-        <Chart coin={currentcoin} />
+        {/* <Chart coin={currentcoin} /> */}
        </div>
   )
 }
